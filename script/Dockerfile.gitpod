@@ -1,7 +1,8 @@
+ARG ELIXIR_VERSION=1.14.1
+
 FROM gitpod/workspace-postgres
 
-ENV ELIXIR_VERSION v1.12.0
-ENV ELIXIR_DOWNLOAD_SHA256 2fc896b5f7174708b9a643f1ff3d1718dcc5d2ee31f01b455c0570e8424a3c9a
+ENV ELIXIR_DOWNLOAD_SHA256 8ad537eb84471c24c3e6984c37884f06a7834ff2efd72c436c222baee8df9a11
 
 ENV BORS_WITHIN_DOCKER 1
 ENV WORKSPACE /workspace/bors-ng
@@ -18,7 +19,7 @@ RUN which rg || (curl -L https://github.com/BurntSushi/ripgrep/releases/download
     sudo apt-get update && \
     sudo apt-get -y install --no-install-recommends esl-erlang vim zlib1g-dev libssl-dev openssl libcurl4-openssl-dev libreadline6-dev libpcre3 libpcre3-dev imagemagick libpq-dev advancecomp gifsicle jhead jpegoptim libjpeg-turbo-progs optipng pngcrush pngquant gnupg2 libsqlite3-dev && \
     sudo rm -rf /var/lib/apt/lists/* && \
-    curl -L https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz > elixir-src.tar.gz && \
+    curl -L https://github.com/elixir-lang/elixir/archive/v${ELIXIR_VERSION}.tar.gz > elixir-src.tar.gz && \
     echo "$ELIXIR_DOWNLOAD_SHA256 elixir-src.tar.gz" | sha256sum -c - && \
     mkdir elixir-src && \
     tar -xzC elixir-src --strip-components=1 -f elixir-src.tar.gz && \

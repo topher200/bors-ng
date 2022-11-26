@@ -111,17 +111,17 @@ YMMV on other OSs):
 
 ```sh
 asdf plugin-add erlang
-asdf install erlang 24.0
+asdf install erlang 25.1
 asdf plugin-add elixir
-asdf install elixir 1.13.2
+asdf install elixir 1.14.1
 # in the parent directory
 cat<<EOF > ../.tool-versions
-elixir 1.13.2
-erlang 24.0
+elixir 1.14.1
+erlang 25.1
 EOF
 ```
 
-**NOTE**: please double check the Erlang and Elixir versions against `.travis.yml` to make sure you are using a supported version.
+**NOTE**: please double check the Erlang and Elixir versions against `.github/workflows/main.yml` to make sure you are using a supported version.
 
 ### Running tests locally
 
